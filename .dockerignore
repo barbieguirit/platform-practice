@@ -4,7 +4,7 @@
 .vscode
 .idea
 
-# Anchor project dependencies and local dumps to the root context
+# I-anchor ang project dependencies at local dumps sa root context
 /vendor/
 /node_modules/
 /public/bundles/
