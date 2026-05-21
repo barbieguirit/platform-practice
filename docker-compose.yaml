@@ -3,24 +3,15 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: jimwella
-    container_name: jimwella_container
+
     ports:
       - "9000:80"
-    volumes:
-      - ./src:/app/src
-      - ./templates:/app/templates
-      - ./public:/app/public
-      - ./var:/app/var
+
     environment:
-      DATABASE_URL: "mysql://${MYSQL_USER}:${MYSQL_PASSWORD}@db:3306/${MYSQL_DATABASE}?serverVersion=8.0.32&charset=utf8mb4"
       APP_ENV: prod
       APP_DEBUG: "false"
-    depends_on:
-      db:
-        condition: service_healthy
-    networks:
-      - platform-network
+      DATABASE_URL: "${DATABASE_URL}"
+
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost/" ]
       interval: 10s
