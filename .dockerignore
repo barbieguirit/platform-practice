@@ -1,0 +1,19 @@
+.git
+.gitignore
+.gitmodules
+.vscode
+.idea
+
+# Anchor project dependencies and local dumps to the root context
+/vendor/
+/node_modules/
+/public/bundles/
+/assets/vendor/
+/var/
+
+.env.local
+.env.dev
+/.env.*.local
+/.env.local.php
+/.phpunit.cache
+/phpunit.xml
